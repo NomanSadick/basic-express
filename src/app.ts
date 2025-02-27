@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import httpStatus from "http-status";
 import router from "./app/routes";
+import errorHandler from "./app/middlewares/errorHandler";
 
 const app = express();
 
@@ -26,5 +27,8 @@ app.use((req: Request, res: Response) => {
     message: "Not Found",
   });
 });
+
+// Error Handling Middleware
+app.use(errorHandler);
 
 export default app;
