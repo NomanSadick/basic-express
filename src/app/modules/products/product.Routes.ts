@@ -1,13 +1,13 @@
-import express from "express";
+import { Router } from "express";
 import {
   getProducts,
   getProduct,
   createProduct,
   updateProduct,
   deleteProduct,
-} from "../controllers/productController.js";
+} from "./product.Controller";
 
-const router = express.Router();
+const router = Router();
 
 router.get("/", getProducts);
 router.get("/:id", getProduct);
@@ -15,4 +15,5 @@ router.post("/", createProduct);
 router.put("/:id", updateProduct);
 router.delete("/:id", deleteProduct);
 
-export default router; // Exporting the router as default
+
+export const productRoute = router;
