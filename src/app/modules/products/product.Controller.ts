@@ -23,7 +23,9 @@ export const getProduct = async (req: Request, res: Response, next: NextFunction
   try {
     const { id } = req.params;
     const product = await productService.getProductById(id);
-
+    if (!product) {
+       res.status(404).json({ message: "Product not found" });
+    }
     res.status(200).json(product);
   } catch (error) {
     next(error);
