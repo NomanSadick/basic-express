@@ -7,4 +7,6 @@ export default {
   mongoURI: process.env.MONGO_URI,
   jwtSecret: process.env.JWT_SECRET || "default_secret",
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || "1d",
+  googleClientID: process.env.GOOGLE_CLIENT_ID || "",
+  googleClientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
 };
