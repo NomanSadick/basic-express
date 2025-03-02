@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import app from "./app";
-import { config } from "./app/configs";
+import  config  from "./app/config";
 
 
 if (config.mongoURI) {

@@ -3,15 +3,16 @@ import cors from "cors";
 import httpStatus from "http-status";
 import router from "./app/routes";
 import errorHandler from "./app/middlewares/errorHandler";
+// Import Passport configuration
 
 const app = express();
 
 // Middleware
 app.use(express.json());
 app.use(cors());
+// app.use(passport.initialize()); // Initialize Passport
 
 // Routes
-
 app.use("/api", router);
 
 // Home Route
